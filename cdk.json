@@ -1,0 +1,9 @@
+{
+  "app": "sbt --error 'set showSuccess := false' cdk/run",
+  "toolkitStackName": "tool-rota-notification-cdk-kit",
+  "toolkitBucketName": "tool-rota-notification-cdk-kit",
+  "context": {
+    "@aws-cdk/core:enableStackNameDuplicates": "true",
+    "aws-cdk:enableDiffNoFail": "true"
+  }
+}
