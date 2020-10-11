@@ -65,7 +65,7 @@ lazy val presentation = (project in file("modules/adapter/presentation"))
   )
 
 lazy val notifyDaysShift = (project in file("modules/adapter/presentation/notifydaysshift"))
-  .dependsOn(usecase, service, infraSQS)
+  .dependsOn(usecase, service, infraDynamoDB)
   .settings(commonSettings: _*)
   .settings(assemblySettings: _*)
   .settings(
@@ -113,3 +113,12 @@ lazy val infraSQS = (project in file("modules/adapter/infrastructure/sqs"))
     parallelExecution in Test := false
   )
   .dependsOn(domain, service)
+
+lazy val infraDynamoDB = (project in file("modules/adapter/infrastructure/dynamodb"))
+  .settings(commonSettings: _*)
+  .settings(assemblySettings: _*)
+  .settings(libraryDependencies ++= dynamoDBDependencies)
+  .settings(
+    parallelExecution in Test := false
+  )
+  .dependsOn(domain)
