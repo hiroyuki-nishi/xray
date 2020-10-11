@@ -1,7 +1,9 @@
 repos:
   - repo: https://github.com/softwaremill/scala-pre-commit-hooks
     rev: v0.3.0
-    default_phase: commit
     hooks:
       - id: sbt-unused-imports
         stages: [push]
+        args: [ --scope=test:compile ]
+#      - id: sbt-unused-imports #includes fatal warnings, arguments optional
+#        args: [ --scope=test:compile ]
