@@ -9,7 +9,7 @@ import scala.collection.immutable.List
 class CreateAccountUseCaseTest extends AnyWordSpec with Diagrams with MockFactory {
   "CreateAccountUseCaseTest" when {
     "test" should {
-      "x" in {
+      "y" in {
         assert(true)
       }
     }
