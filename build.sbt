@@ -30,6 +30,7 @@ lazy val root = (project in file("."))
   .aggregate(
     presentation,
     usecase,
+    domain,
     infrastructure
   )
   .settings(commonSettings: _*)
@@ -61,7 +62,8 @@ lazy val presentation = (project in file("modules/adapter/presentation"))
     notifyDaysShift
   )
   .settings(
-    publishArtifact := false
+    publishArtifact := false,
+    wartremoverErrors ++= Warts.unsafe
   )
 
 lazy val notifyDaysShift = (project in file("modules/adapter/presentation/notifydaysshift"))

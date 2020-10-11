@@ -4,3 +4,7 @@ repos:
     hooks:
       - id: sbt-unused-imports
         stages: [push]
+      - id: sbt-scalafmt
+#      - id: sbt-wartremover
+#        stages: [commit]
+#        args: [--warts=Warts.unsafe, --scope=test:compile]

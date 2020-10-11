@@ -19,7 +19,6 @@ Resources:
       CodeUri: modules/adapter/presentation/notifydaysshift/target/scala-2.13/notifyDaysShift.jar
       Handler: shiftdays.App::handleRequest
       FunctionName: notifyDaysShift
-      Role: arn:aws:iam::199876483017:role/Administrator
 #      Events:
 #        HelloWorld:
 #          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api

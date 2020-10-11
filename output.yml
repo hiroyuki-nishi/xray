@@ -16,4 +16,3 @@ Resources:
       CodeUri: s3://sam-sample/d007adba273519b4d8a37fcf0ea7bf4a
       Handler: shiftdays.App::handleRequest
       FunctionName: notifyDaysShift
-      Role: arn:aws:iam::199876483017:role/Administrator

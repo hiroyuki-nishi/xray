@@ -25,3 +25,11 @@ class App extends RequestHandler[SQSEvent, Unit] with LazyLogging {
     }
   }
 }
+
+package object model {
+
+  case class Name(name: String)
+
+  case class Message(message: String)
+
+}

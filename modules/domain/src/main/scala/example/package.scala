@@ -7,4 +7,5 @@ package object domain {
 
   implicit def wrapValue[P, V <: Value[P]](value: P)(implicit conv: P => V): V = conv(value)
   implicit def unwrapValue[P](value: Value[P]): P                              = value.value
+  case class Name(name: String)
 }
