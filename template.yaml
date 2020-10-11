@@ -6,6 +6,7 @@ Globals:
   Function:
     Runtime: java8
     Timeout: 60
+    MemorySize: 512
     Environment:
       Variables:
         REGION: ap-northeast-1
@@ -16,8 +17,9 @@ Resources:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
       CodeUri: modules/adapter/presentation/notifydaysshift/target/scala-2.13/notifyDaysShift.jar
-      Handler: sample.App::handleRequest
+      Handler: shiftdays.App::handleRequest
       FunctionName: notifyDaysShift
+      Role: arn:aws:iam::199876483017:role/Administrator
 #      Events:
 #        HelloWorld:
 #          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api

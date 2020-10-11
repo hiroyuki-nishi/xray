@@ -24,6 +24,7 @@ trait GroupRepositoryOnDynamoDB extends DynamoDBWrapper with LazyLogging {
           .key(
             Map(AttrGroupId -> AttributeValue.builder().s(group.id.value).build()).asJava
           )
+          .tableName(tableName)
           .build()
       )
       entity <- record2Entity(item)
