@@ -14,6 +14,7 @@ object CdkApp {
     lazy val environment = Environment.builder().region("ap-northeast-1").build()
     val app              = new App
     new LambdaStack(app, "lambda", createStackProps("notify-days-shift-lambda", environment))
+    new DynamoDBStack(app, "dynamodb", createStackProps("sample-dynamodb", environment))
     app.synth
   }
 }
