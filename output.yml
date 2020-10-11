@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Sample SAM Template
+Globals:
+  Function:
+    Runtime: java8
+    Timeout: 60
+    MemorySize: 512
+    Environment:
+      Variables:
+        REGION: ap-northeast-1
+Resources:
+  HelloWorldFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: s3://sam-sample/d007adba273519b4d8a37fcf0ea7bf4a
+      Handler: shiftdays.App::handleRequest
+      FunctionName: notifyDaysShift

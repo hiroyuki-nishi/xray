@@ -7,6 +7,7 @@ object Dependencies {
   lazy val awsSqs = "software.amazon.awssdk" % "sqs" % awsSdkV2Version
   lazy val awsLambdaJavaCore = "com.amazonaws" % "aws-lambda-java-core" % "1.2.1"
   lazy val awsJavaEvents = "com.amazonaws" % "aws-lambda-java-events" % "2.2.7"
+  lazy val awsDynamoDB = "software.amazon.awssdk" % "dynamodb" % awsSdkV2Version
 
   // x-ray
   lazy val xraySdkVersion = "2.7.1"
@@ -28,7 +29,6 @@ object Dependencies {
     circeParser
   )
 
-
   // log
   lazy val scalaLogging = "com.typesafe.scala-logging" %% "scala-logging" % "3.9.2"
 
@@ -46,6 +46,7 @@ object Dependencies {
     "software.amazon.awscdk" % "core" % awsCdkVersion,
     "software.amazon.awscdk" % "lambda" % awsCdkVersion,
     "software.amazon.awscdk" % "s3" % awsCdkVersion,
+    "software.amazon.awscdk" % "dynamodb" % awsCdkVersion,
     "software.amazon.awscdk" % "events-targets" % awsCdkVersion
   )
 
@@ -69,4 +70,9 @@ object Dependencies {
     awsSqs,
     scalaLogging
   ) ++ testDependencies ++ circeDependencies ++ xrayDependencies
+
+  lazy val dynamoDBDependencies: Seq[ModuleID] = Seq(
+    awsDynamoDB,
+    scalaLogging
+  ) ++ testDependencies
 }

@@ -1,0 +1,8 @@
+repos:
+  - repo: https://github.com/softwaremill/scala-pre-commit-hooks
+    rev: v0.3.0
+    hooks:
+      - id: sbt-scalafmt
+      - id: sbt-wartremover
+        stages: [commit]
+#        args: [--warts=Warts.unsafe, --scope=test:compile]
